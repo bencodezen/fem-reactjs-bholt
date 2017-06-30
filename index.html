@@ -9,26 +9,28 @@
 	<script src="node_modules/react/dist/react.js"></script>
 	<script src="node_modules/react-dom/dist/react-dom.js"></script>
 	<script>
+		const ce = React.createElement
+
 		const myTitle = function() {
 			return (
-				React.createElement('div', null,
-					React.createElement('h1', null, 'My second component!')
+				ce('div', null,
+					ce('h1', null, 'My second component!')
 				)
 			)
 		}
 
 		const myFirstComponent = function() {
-			return React.createElement('div', null,
-				React.createElement(myTitle),
-				React.createElement(myTitle),
-				React.createElement(myTitle),
-				React.createElement(myTitle),
-				React.createElement(myTitle)
+			return ce('div', null,
+				ce(myTitle),
+				ce(myTitle),
+				ce(myTitle),
+				ce(myTitle),
+				ce(myTitle)
 			)
 		}
 
 		ReactDOM.render(
-			React.createElement(myFirstComponent),
+			ce(myFirstComponent),
 			document.getElementById('app')
 		)
 	</script>
