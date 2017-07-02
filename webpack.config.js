@@ -11,6 +11,9 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.jsx', '.json']
 	},
+	devServer: {
+		publicPath: '/public/'
+	},
 	stats: {
 		colors: true,
 		reasons: true,
