@@ -1,16 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { HashRouter, Route } from 'react-router-dom';
+import Landing from './Landing';
+import Search from './Search';
 
-const App = () => {
-	return (
+const App = () =>
+	<HashRouter>
 		<div className="app">
-			<div className="landing">
-				<h1>React Video Player</h1>
-				<input type="text" placeholder="Search" />
-				<a href="#">or Browse All</a>
-			</div>
+			<Route exact path="/" component={Landing} />
+			<Route exact path="/search" component={Search} />
 		</div>
-	);
-};
+	</HashRouter>;
 
 render(<App />, document.getElementById('app'));
